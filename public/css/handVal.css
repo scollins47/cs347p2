@@ -1,0 +1,19 @@
+/* all percent values are based on parent container, which in all cases would
+bubble up to the body which is set based on the screen size. */
+/* Flex is also responsive to width and height changes, so anything with any
+flex attribute should be considered screen-independent */
+* {
+  font-family: Arial, sans-serif;
+}
+#content {
+  display:inline;
+  max-width: 90vw;
+  padding: 1%;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap:wrap;
+  overflow: scroll;
+}
+/* image{
+  
+} */

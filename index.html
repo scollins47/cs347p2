@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Poker Help </title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div id="headbar">
+    <h1 id="greeting"> </h1>
+    <button classs = "button" id="login" onclick="location.href='/login'">Login</button>
+    <button class="darkblue button" id="1" onclick="location.href='./home'">Home</button>
+    <button class="darkblue button" id="2" onclick="location.href='./hands'">Poker Hands</button>
+    <button  class="darkblue button" id="3" onclick= "location.href = './values'">Hand Value Chart</button>
+    <button class="darkblue button" id="4" onclick="location.href='./otherGames'"> Other Games </button>
+    <button class="darkblue button" id="5" onclick="location.href='./biblio'">Sources</button>
+  </div>
+  <div id="content" >
+    <div id="first" class="border">
+      <h2 class="center">Setting Up The Game</h2>
+      <dl class="left">
+        <dt><b>There are 4 main positions that you'll need to know:</b></dt>
+        <dd>Dealer Button (or BTN)</dd>
+        <dd>Small Blind (SB)</dd>
+        <dd>Big Blind (BB)</dd>
+        <dd>Under-The-Gun (UTG)</dd>
+      </dl>
+      <p> Each position can play a different role in the game. Starting with the
+      dealer and moving clockwise, each position is as follows, small blind, big
+      blind, under the gun, highjack, and cutoff. There can be as many under the
+      gun players as you want, as long as the rest of the positions are filled.
+      The dealer then passes each player, starting with the small blind, 1 card
+      at a time until each player has 2 cards. The small blind and big blinds,
+      before even getting their cards, contribute a predetermined amount to the
+      pot. After every has gotten their cards, the first UTG begins the first
+      round of betting. After the first round of betting completes, the dealer
+      then "burns", or puts one card face down, and then reveals the next 3
+      cards, also called the <b>flop.</b> After the flop another round of betting
+      ensues, starting with the small blind (or the leftmost, still active,
+      player in the game). Then the dealer must burn another card, and reveal
+      the next card, also called the <b>turn.</b> After another round of betting
+      the dealer burns one more card revealing the last and final card the
+      <b>river.</b> After the river card one final round of betting happens, and
+      each player reveals his hand, with the winner taking the pot.</p>
+    </div>
+    <div id="center" class="border" style="align-items:center;">
+      <img id="img" src="./images/positions.png" alt="PokerPositions"/>
+    </div>
+    <div id="last" class="border">
+      <h2 class="center"> Betting </h2>
+        <dl class="center">
+          <dt class="left"><b>Each player may perform one of 4 actions:</b></dt>
+          <dd class="left">Check</dd>
+          <dd class="left">Call</dd>
+          <dd class="left">Raise</dd>
+          <dd class="left">Fold</dd>
+        </dl>
+        <p> Beginning with the person UTG, they may check, which means to not
+        bet anything, raise, which means to bet some amount of money (normally
+        in multiples of the big blind, or the previous bet), or fold, which means to burn your cards,
+        and leave this round of poker. After a bet has been made, the next
+        person to bet cannot check, and must either, call, which means to match
+        the amount of money the person who bet put in the pot, raise, or fold.
+        After the last round of betting, all players who are still in the round,
+        must reveal their cards. The person with the best hand, wins. If a
+        player does not have enough money to call, but still wants to play their
+        hand, they may all-in, which means to push all their money into the pot.
+        However, if they win, they can only win the amount of money that was
+        thrown into the pot up to that round of betting. All bets after an all
+        in, are put in a side pot to be split by the people who still have
+        enough money at the end of the round of poker.</p>
+    </div>
+    <script src="js/index.js" onload="setup()"></script>
+  </div>
+</body>
+</html>

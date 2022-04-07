@@ -1,0 +1,124 @@
+/* all percent values are based on parent container, which in all cases would
+bubble up to the body which is set based on the screen size. */
+/* Flex is also responsive to width and height changes, so anything with any
+flex attribute should be considered screen-independent */
+body {
+  background-color: #ebf2fa;
+  width: 98vw; /* "reactive" */
+  min-height:fit-content;
+  height: 98vh; /* "reactive" */
+  display: flex; /* also reactive */
+  font-family:'Times New Roman', Times, serif;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button {
+  border-radius: 10px;
+  min-width: fit-content;
+  min-height: fit-content;
+  width: 10%; 
+  height: 25%;
+  background-color: #064789;
+  color: #ebf2fa;
+}
+button:hover {
+  background-color: #4279a1bb;
+}
+
+#content{
+  display:inline-flex;
+  width: 90vw;
+  height: 90vh;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#first {
+  display:flex;
+  flex-direction: column;
+  width: 30%;
+  min-height:fit-content;
+  height: 100%;
+  padding:1%;
+  justify-self: flex-start;
+  overflow-y:scroll;
+}
+#center {
+  width: 30%;
+  height: 100%;
+  min-height: fit-content;
+  padding:1%;
+  overflow-y: scroll;
+  justify-self: center;
+}
+#last {
+  width: 30%;
+  height: 100%;
+  min-height: fit-content;
+  padding:1%;
+  overflow-y: scroll;
+  justify-self: flex-end;
+}
+#greeting {
+  width: 100%;
+  justify-self: center;
+  color: #334e58;
+  text-align: center;
+}
+#headbar {
+  display:flex;
+  min-height: 30vh;
+  width:90vw;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#img {
+  max-width: 100%;
+}
+
+.userInt {
+  background-color: #679436;
+}
+.userIntAct{
+  background-color: #a5be00;
+}
+.background {
+  background-color: #ebf2fa;
+}
+.info {
+  background-color: #4279a1bb;
+}
+.darkblue{
+  background-color: #064789;
+}
+.border {
+  border: 2px solid #064789;
+  border-radius: 2px;
+}
+.center {
+  text-align: center;
+  justify-self: center;
+}
+.left {
+  justify-self: flex-start;
+  text-align:left;
+}
+.right {
+  justify-self: flex-end;
+  text-align:right;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 50px;
+}
+
+.typesImg {
+  margin-left: auto;
+  margin-right: auto;
+}
