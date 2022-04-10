@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,10 @@
     <title>Login Page</title>
 </head>
 <body>
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
     <input type="submit" value="Login" onclick="login()">
-    </div>
-    <script src="js/index.js"></script>
+    <input type="submit" value="Sign Up" onclick="signup()">
+    <script src="js/login.js" onload="setupListener()"></script>
 </body>
 </html>

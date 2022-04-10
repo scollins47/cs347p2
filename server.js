@@ -1,21 +1,25 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-const pg = require("pg");
+let mysql = require('mysql');
+
+let connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Orange123',
+    database: 'credentials'
+});
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
-const config = {
-    host: 'localhost',
-    user: 'postgres',
-    database: 'lab5',
-    password: 'Orange123',
-    port: 5432
-}
-const conString = 'postgres://newuser:Orange123@localhost/accounts';
-const pool = new pg.Pool(config);
-
+connection.connect((err) => {
+    if (err) {
+        console.log('Error connecting to Db');
+        return;
+    }
+    console.log('Connection established');
+});
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
@@ -45,14 +49,48 @@ app.get("/", (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-    let resp = await pool.query("SELECT * FROM lab5");
-    let { username, password } = req.body;
-    for (entry of resp.rows) {
-        if (username == entry.username && password == entry.password) {
-            // change from sendStatus to send more info
-            res.sendFile(`${__dirname}/index.html`);
+    let username = req.body.username;
+    let password = req.body.password;
+    let sql = `SELECT * FROM user WHERE username = '${username}' AND password = '${password}'`;
+    connection.query(sql, (err, result) => {
+        if (err) {
+            console.log(err);
+            return;
         }
-    }
-    // didnt authenticate.
-    res.sendStatus(201);
+        if (result.length > 0) {
+            console.log(result[0]);
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(201);
+        }
+    });
+
+});
+
+app.post("/signup", async (req, res) => {
+    let { username, password } = req.body;
+    let sql1 = `SELECT * FROM user WHERE username = '${username}'`;
+    // first check for duplicate username
+    connection.query(sql1, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+            return;
+        }
+        if (result.length >= 1) {
+            console.log("USERNAME TAKEN");
+            res.sendStatus(201);
+            return;
+        }
+        let sql = `INSERT INTO user (username, password) VALUES ('${username}', '${password}')`;
+        connection.query(sql, (err, result) => {
+            if (err) {
+                console.log("Error insterting into database");
+                res.sendStatus(500);
+                return;
+            }
+            console.log("USER CREATED");
+            res.sendStatus(200);
+        });
+    });
 });
