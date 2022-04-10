@@ -5,24 +5,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poker Hands</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="public/css/index.css">
+  <link rel="stylesheet" href="public/css/slideMenu.css">
 </head>
 <body>
   <div id="headbar">
-    <h1 id="title">Find Information About Poker Hands</h1>
-    <button id="1" onclick="location.href='/home'">Home</button>
-    <button id="2" onclick="location.href='/hands'">Poker Hands</button>
-    <button id="3" onclick="location.href = '/values'">Hand Value Chart</button>
-    <button id="4" onclick="location.href='/otherGames'"> Other Games </button>
-    <button id="5" onclick="location.href='/biblio'">Sources</button>
+    <h1 id="title">Hand Rankings</h1>
   </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" onclick="location.href='./index.html'">Home</a>
+    <a href="#" onclick="location.href='./pokerHand.html'">Poker Hands</a>
+    <a href="#" onclick="location.href = './handVal.html'">Hand Value Chart</a>
+    <a href="#" onclick="location.href='./otherGames.html'">Other Games</a>
+    <a href="#" onclick="location.href='./biblio.html'">Sources</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
   <div id="content">
     <div class="row">
       <div class="column">
-        <img src="images/PokerHands.jpg" alt="Poker Hand Rankings" width="350" height="600">
+        <img src="public/images/PokerHands.jpg" alt="Poker Hand Rankings" width="350" height="600">
       </div>
       <div class="column">
-        <img src="images/TopHands.jpg" alt="Top 20 Starting Hands" width="350" height="600">
+        <img src="public/images/TopHands.jpg" alt="Top 20 Starting Hands" width="350" height="600">
       </div>
   </div>
 </body>

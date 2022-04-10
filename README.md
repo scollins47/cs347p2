@@ -14,7 +14,7 @@ Above and beyond:
   We went above and beyond by using many css specifications to get our website looking *good* (in our opinion). Most amateur websites you see do not look nearly as
   good as ours. Also, we knew exactly what units to use, and we even used 'flex'. We went above and beyond in many ways.
 Hour count:
-  10 hours each (20 hours total)
+  15 hours each member (30 hours total)
 Grade anticipated:
-  We both believe that we deserve A's this project. Not only did we work really hard and spend a lot of time on this, but we also met every expectation, went 
+  We both believe that we deserve A's on this project. Not only did we work really hard and spend a lot of time on this, but we also met every expectation, went 
   above and beyond, and we put love into it.
