@@ -3,7 +3,7 @@ bubble up to the body which is set based on the screen size. */
 /* Flex is also responsive to width and height changes, so anything with any
 flex attribute should be considered screen-independent */
 body {
-  background-color: #ebf2fa;
+  background-color: #82c8e6;
   width: 98vw; /* "reactive" */
   min-height:fit-content;
   height: 98vh; /* "reactive" */
@@ -121,4 +121,11 @@ button:hover {
 .typesImg {
   margin-left: auto;
   margin-right: auto;
+}
+
+span {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
