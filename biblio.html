@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sources</title>
-  <link rel="stylesheet" href="public/css/index.css">
-  <link rel="stylesheet" href="public/css/slideMenu.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/slideMenu.css">
 </head>
 <body>
   <div id="headbar">
@@ -15,11 +15,12 @@
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#" onclick="location.href='./index.html'">Home</a>
-    <a href="#" onclick="location.href='./pokerHand.html'">Poker Hands</a>
-    <a href="#" onclick="location.href = './handVal.html'">Hand Value Chart</a>
-    <a href="#" onclick="location.href='./otherGames.html'">Other Games</a>
-    <a href="#" onclick="location.href='./biblio.html'">Sources</a>
+    <a href="#" onclick="location.href='/home'">Home</a>
+    <a href="#" onclick="location.href='/hands'">Poker Hands</a>
+    <a href="#" onclick="location.href = '/values'">Hand Value Chart</a>
+    <a href="#" onclick="location.href='/otherGames'">Other Games</a>
+    <a href="#" onclick="location.href='/biblio'">Sources</a>
+    <a href="#" onclick="location.href='/'">Logout</a>
   </div>
   <script>
     function openNav() {

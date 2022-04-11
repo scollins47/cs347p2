@@ -5,20 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Poker Help </title>
-  <link rel="stylesheet" href="public/css/index.css">
-  <link rel="stylesheet" href="public/css/slideMenu.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/slideMenu.css">
 </head>
 <body>
-  <div id="headbar">
-    <h1 id="title">Poker 101</h1>
-  </div>
+  <h1 id="greeting"> </h1>
+  <h1 id="title">Poker 101</h1>
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#" onclick="location.href='./index.html'">Home</a>
-    <a href="#" onclick="location.href='./pokerHand.html'">Poker Hands</a>
-    <a href="#" onclick="location.href = './handVal.html'">Hand Value Chart</a>
-    <a href="#" onclick="location.href='./otherGames.html'">Other Games</a>
-    <a href="#" onclick="location.href='./biblio.html'">Sources</a>
+    <a href="#" onclick="location.href='/home'">Home</a>
+    <a href="#" onclick="location.href='/hands'">Poker Hands</a>
+    <a href="#" onclick="location.href = '/values'">Hand Value Chart</a>
+    <a href="#" onclick="location.href='/otherGames'">Other Games</a>
+    <a href="#" onclick="location.href='/biblio'">Sources</a>
+    <a href="#" onclick="location.href='/'">Logout</a>
   </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
   <script>
@@ -58,7 +58,7 @@
       each player reveals his hand, with the winner taking the pot.</p>
     </div>
     <div id="center" class="border" style="align-items:center;">
-      <img id="img" src="public/images/positions.png" alt="PokerPositions"/>
+      <img id="img" src="/images/positions.png" alt="PokerPositions"/>
     </div>
     <div id="last" class="border">
       <h2 class="center"> Betting </h2>
@@ -84,7 +84,7 @@
         in, are put in a side pot to be split by the people who still have
         enough money at the end of the round of poker.</p>
     </div>
-    <script src="public/js/index.js" onload="setup()"></script>
+    <script src="/js/index.js" onload="setup()"></script>
   </div>
 </body>
 </html>

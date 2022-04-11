@@ -15,7 +15,7 @@ function login() {
         return;
     }
     let password = document.getElementById("password").value;
-    if (!validatePassword(password)) {
+    if (validatePassword(password)) {
         alert("Please enter a password with more than 5 characters.");
         return;
     }
@@ -29,15 +29,20 @@ function login() {
         }
     });
 }
-
+/**
+ * Validates email and password
+ * @returns nothing sends client to the home page if sucessful
+ */
 function signup() {
     let username = document.getElementById("username").value;
     if (!validateEmail(username)) {
+        document.getElementById("username").style.borderColor = "#ff0000";
         alert("Please enter a valid email address.");
         return;
     }
     let password = document.getElementById("password").value;
     if (!validatePassword(password)) {
+        document.getElementById("username").style.borderColor = "#ff0000";
         alert("Please enter a password with more than 5 characters.");
         return;
     }
@@ -53,14 +58,22 @@ function signup() {
     });
 }
 
+/**
+ * 
+ * @param {String} email 
+ * @returns boolean if email is valid
+ */
 function validateEmail(email) {
+    // from grepper
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
+/**
+ * 
+ * @param {String} password 
+ * @returns boolean if password is valid
+ */
 function validatePassword(password) {
     console.log(password);
-    if (password.length <= 5) {
-        return false;
-    }
-    return true;
+    return (password.length <= 5);
 }
