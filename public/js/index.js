@@ -4,7 +4,6 @@
 let buttonChange = 0;
 
 
-
 /**
  * Changes the buttons hover style on each mouseover event
  */
@@ -56,6 +55,42 @@ function fadeOutEffect(id) {
     }, 100);
     fadeTarget.style.opacity = 1;
 }
+
+/**
+ * Gets the valid users to send a message to.
+ */
+async function choosePerson() {
+    let username = document.cookie.split(",")[0].split("=")[1];
+    document.getElementById("people").innerHTML = "";
+    let response = await fetch("/choosePerson", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({username})
+    });
+    let data = await response.json();
+    for (user of data) {
+        let option = document.createElement("button");
+        option.innerHTML = user.username;
+        option.addEventListener("click", () => {
+            let user = option.innerHTML;
+            setReceiver(user);
+        });
+        document.getElementById("people").appendChild(option);
+    }
+}
+
+function setReceiver(username) {
+    let cookie = document.cookie;
+    let user = cookie.split(",")[0];
+    let receiver = ",receiver=" + username;
+    document.cookie = `${user}${receiver}`;
+    let childArr = document.getElementById("people").children;
+    for (let i = 0; i < childArr.length; i++) {
+        if (childArr[i].innerHTML != username) {
+            childArr[i].style.display = "none";
+        }
+    }
+}
+
 /**
  * Sets up event listeners and document.
  */

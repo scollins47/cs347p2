@@ -85,6 +85,15 @@
         enough money at the end of the round of poker.</p>
     </div>
     <script src="/js/index.js" onload="setup()"></script>
+    <script src="/js/socketStuff.js" type="module"></script>
+    <div id="chatbox">
+      <div id="messages"></div>
+      <div id="people"></div>
+      <input type="text" id="message">
+      <button id="sendMsg">Send</button>
+      <button id="msgsChooser" onclick="choosePerson()">Select User</button>
+      <button id="loadMsgs">Load Msgs</button>
+    </div>
   </div>
 </body>
 </html>

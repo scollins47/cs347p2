@@ -25,6 +25,7 @@ function login() {
             alert("Not a valid username or password");
         }
         if (response.status == 200) {
+            document.cookie = "username=" + username;
             window.location.href = "/home";
         }
     });
@@ -41,7 +42,7 @@ function signup() {
         return;
     }
     let password = document.getElementById("password").value;
-    if (!validatePassword(password)) {
+    if (validatePassword(password)) {
         document.getElementById("username").style.borderColor = "#ff0000";
         alert("Please enter a password with more than 5 characters.");
         return;
@@ -53,6 +54,7 @@ function signup() {
             alert("Username already exists");
         }
         if (response.status == 200) {
+            document.cookie = "username=" + username;
             window.location.href = "/home";
         }
     });

@@ -77,6 +77,31 @@ button:hover {
   max-width: 100%;
 }
 
+#messages {
+  display: flex;
+  flex-direction: column;
+  border : 1px solid #334e58;
+  width: 10vw;
+  height: 10vh;
+  overflow-y: scroll;
+}
+.sent {
+  display: flex;
+  align-self: flex-end;
+  color:#064789;
+  padding:0%;
+  margin:0%;
+  padding-bottom: 2%;
+}
+.received {
+  display: flex;
+  align-self: flex-start;
+  color:#6a4e3a;
+  padding:0%;
+  margin:0%;
+  padding-bottom:2%;
+}
+
 .userInt {
   background-color: #679436;
 }

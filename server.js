@@ -1,6 +1,9 @@
 const express = require('express');
+const http = require("http");
 const app = express();
 const PORT = 3000;
+const server = http.createServer(app);
+const io = require("socket.io")(server);
 let mysql = require('mysql');
 
 let connection = mysql.createConnection({
@@ -9,6 +12,7 @@ let connection = mysql.createConnection({
     password: 'Orange123',
     database: 'credentials'
 });
+
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
@@ -20,7 +24,7 @@ connection.connect((err) => {
     }
     console.log('Connection established');
 });
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
 
@@ -46,6 +50,19 @@ app.get("/biblio", (req, res) => {
 
 app.get("/", (req, res) => {
     res.sendFile(`${__dirname}/login.html`);
+});
+
+app.post("/choosePerson", (req, res) => {
+    let username = req.body.username;
+    let sql = `SELECT username FROM user where username != '${username}'`;
+    connection.query(sql, (err, result) => {
+        if (err) {
+            res.status(404);
+            console.log(err);
+            return;
+        }
+        res.send(result).status(200);
+    });
 });
 
 app.post("/login", async (req, res) => {
@@ -94,3 +111,31 @@ app.post("/signup", async (req, res) => {
         });
     });
 });
+
+io.sockets.on("connection", onConnect);
+
+function loadAndSend(socket, from, to) {
+    let sql = `SELECT * FROM Messages WHERE FromID='${from}' AND ToID='${to}' OR FromID='${to}' AND ToID='${from}'`;
+    connection.query(sql, (err, result) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        // result always in correct msg order since db is ordered
+        socket.emit("loadMessages", { from: from, to: to, messages: result });
+    });
+}
+function onConnect(socket) {
+    console.log("Client connected");
+    socket.on("loadMessages", ({from, to}) => {
+        loadAndSend(socket, from, to);
+    });
+    socket.on("sendMessage", ({ from, to, message }) => {
+        let sql = `INSERT INTO messages (fromID, toID, message) VALUES ('${from}', '${to}', '${message}')`;
+        connection.query(sql, (err, result) => {
+            if (err)
+                console.log(err);
+        });
+        loadAndSend(socket, from, to);
+    });
+}
