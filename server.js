@@ -112,8 +112,11 @@ app.post("/signup", async (req, res) => {
     });
 });
 
+// ************* SOCKET STUFF **********************
+// listen for any connections from the client
 io.sockets.on("connection", onConnect);
 
+// load messages from database and send back to client
 function loadAndSend(socket, from, to) {
     let sql = `SELECT * FROM Messages WHERE FromID='${from}' AND ToID='${to}' OR FromID='${to}' AND ToID='${from}'`;
     connection.query(sql, (err, result) => {
@@ -122,6 +125,7 @@ function loadAndSend(socket, from, to) {
             return;
         }
         // result always in correct msg order since db is ordered
+        // send the messages to the client
         socket.emit("loadMessages", { from: from, to: to, messages: result });
     });
 }

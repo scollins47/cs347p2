@@ -60,16 +60,21 @@ function fadeOutEffect(id) {
  * Gets the valid users to send a message to.
  */
 async function choosePerson() {
+    // get the username from the cookie
     let username = document.cookie.split(",")[0].split("=")[1];
+    // clear the select box of all options
     document.getElementById("people").innerHTML = "";
+    // get the users from the server
     let response = await fetch("/choosePerson", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({username})
     });
     let data = await response.json();
+    // add all users to the select box
     for (user of data) {
         let option = document.createElement("button");
         option.innerHTML = user.username;
+        // if the button is clicked set the receiver
         option.addEventListener("click", () => {
             let user = option.innerHTML;
             setReceiver(user);
@@ -77,13 +82,17 @@ async function choosePerson() {
         document.getElementById("people").appendChild(option);
     }
 }
-
+// sets the receiver of the message
 function setReceiver(username) {
     let cookie = document.cookie;
+    // get the username from the cookie
     let user = cookie.split(",")[0];
+    // set the receiver to the selected user in the cookie
     let receiver = ",receiver=" + username;
     document.cookie = `${user}${receiver}`;
+    // get all the users that could be selected
     let childArr = document.getElementById("people").children;
+    // make them dissapear
     for (let i = 0; i < childArr.length; i++) {
         if (childArr[i].innerHTML != username) {
             childArr[i].style.display = "none";
