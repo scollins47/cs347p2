@@ -44,9 +44,8 @@ document.getElementById("loadMsgs").addEventListener("click", () => {
     socket.emit("loadMessages", { from: username, to: receiver });
 });
 
-// sends a message to the selected user
-document.getElementById("sendMsg").addEventListener("click", () => {
-    let cookie = document.cookie;
+function sendMessage() {
+     let cookie = document.cookie;
     // if the user hasnt set a reciever
     if (cookie.split(",").length == 1) {
         alert("Please select a user to send a message to.");
@@ -60,4 +59,9 @@ document.getElementById("sendMsg").addEventListener("click", () => {
     document.getElementById("message").value = "";
     // send the message to the server
     socket.emit("sendMessage", { from: username, to: receiver, message: message });
+}
+
+// sends a message to the selected user
+document.getElementById("sendMsg").addEventListener("click", () => {
+    sendMessage();
 });
