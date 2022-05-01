@@ -78,7 +78,7 @@ button:hover {
 }
 
 #userText {
-  display:inline-flex;
+  display: inline-flex;
   width: 100%;
   height: fit-content;
   justify-content: flex-start;
@@ -95,6 +95,13 @@ button:hover {
   border : 1px solid #334e58;
   overflow-y: scroll;
 }
+
+#credit {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .sent {
   display: flex;
   align-self: flex-end;
