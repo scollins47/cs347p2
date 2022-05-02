@@ -7,6 +7,7 @@
   <title>Sources</title>
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/slideMenu.css">
+  <!-- <link rel="stylesheet" href="/css/chatMenu.css"> -->
 </head>
 <body>
   <div id="headbar">
@@ -32,16 +33,16 @@
     }
   </script>
 
-  <span id ="chatspan" style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; chat</span>
-  <div id="mySidenav2" class="sidenav2">
-    <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+  <span id ="chatspan" style="font-size:30px;cursor:pointer" onclick="openChat()">&#9776; chat</span>
+  <div id="chatnav" class="chat">
+    <a href="javascript:void(0)" class="closebtn2" onclick="closeChat()">&times;</a>
   </div>
   <script>
-    function openNav2() {
-      document.getElementById("mySidenav2").style.width = "250px";
+    function openChat() {
+      document.getElementById("chatnav").style.width = "250px";
     }
-    function closeNav2() {
-      document.getElementById("mySidenav2").style.width = "0";
+    function closeChat() {
+      document.getElementById("chatnav").style.width = "0";
     }
   </script>
 
