@@ -26,7 +26,7 @@ socket.on("loadMessages", ({ from, to, messages }) => {
     document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
 
 });
-
+ 
 // loads all users to send a message to
 document.getElementById("loadMsgs").addEventListener("click", () => {
     // get the first param in the cookie (the username) and extracts the actual
