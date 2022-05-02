@@ -41,6 +41,8 @@ TO CREATE USER/MESSAGE DATABASE:
 
 WRITEUP (FOR RICHARDS):
 
+see extra/writeup.docx
+
 For this project we chose to teach students how to play poker (Texas Hold'em, specifically). We chose this because, while we love Poker ourselves, it gave us an
 opportunity to think empathetically by putting ourselves in the shoes of people who have never played poker before. This gave us the tricky challenge of designing
 an interesting but simple website that makes it easy for new players to learn. The 'simple' aspect to our website design was the most difficult--it can be challenging
