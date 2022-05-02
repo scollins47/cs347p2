@@ -1,6 +1,20 @@
 Dylan Moreno
 Sammy Collins
 
+TO RUN SERVER LOCALLY:
+1. unzip project folder and place in htdocs folder within XAMPP
+2. run XAMPP and run Apache and MySQL
+3. create database as described below
+4. within project folder in terminal, run
+  >node server.js
+5. in your browser, type localhost:3000 in the url
+
+TO CREATE USER/MESSAGE DATABASE:
+1. make sure XAMPP is running
+2. type the following commands:
+  >cd c:/xampp/mysql/bin
+  >
+
 For this project we chose to teach students how to play poker (Texas Hold'em, specifically). We chose this because, while we love Poker ourselves, it gave us an
 opportunity to think empathetically by putting ourselves in the shoes of people who have never played poker before. This gave us the tricky challenge of designing
 an interesting but simple website that makes it easy for new players to learn. The 'simple' aspect to our website design was the most difficult--it can be challenging
