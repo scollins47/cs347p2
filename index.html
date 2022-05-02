@@ -7,6 +7,7 @@
   <title> Poker Help </title>
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/slideMenu.css">
+  <link rel="stylesheet" href="/css/chatMenu.css">
 </head>
 <body>
   <h1 id="greeting"> </h1>
@@ -29,6 +30,34 @@
       document.getElementById("mySidenav").style.width = "0";
     }
   </script>
+
+  <span id ="chatspan" style="font-size:30px;cursor:pointer" onclick="openChat()">&#9776; chat</span>
+  <script src="/js/index.js" onload="setup()"></script>
+  <script src="/js/socketStuff.js" type="module"></script>
+  <div id="chatnav" class="chat">
+    <a href="javascript:void(0)" class="closebtn2" onclick="closeChat()">&times;</a>
+    <div id="chatbox">
+      <div id="messages"></div>
+      <div id="people"></div>
+      <div id="chatbuttons">
+        <button id="msgsChooser" onclick="choosePerson()">Select User</button>
+        <button id="loadMsgs">Load Msgs</button>
+      </div>
+      <div id="userText">
+        <input type="text" id="message">
+        <button id="sendMsg">Send</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openChat() {
+      document.getElementById("chatnav").style.width = "600px";
+    }
+    function closeChat() {
+      document.getElementById("chatnav").style.width = "0";
+    }
+  </script>
+
   <div id="content" >
     <div id="first" class="border">
       <h2 class="center">Setting Up The Game</h2>
@@ -83,18 +112,6 @@
         thrown into the pot up to that round of betting. All bets after an all
         in, are put in a side pot to be split by the people who still have
         enough money at the end of the round of poker.</p>
-    </div>
-    <script src="/js/index.js" onload="setup()"></script>
-    <script src="/js/socketStuff.js" type="module"></script>
-    <div id="chatbox">
-      <div id="messages"></div>
-      <div id="people"></div>
-      <div id="userText">
-        <input type="text" id="message">
-        <button id="sendMsg">Send</button>
-      </div>
-      <button id="msgsChooser" onclick="choosePerson()">Select User</button>
-      <button id="loadMsgs">Load Msgs</button>
     </div>
   </div>
 </body>

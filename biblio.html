@@ -34,17 +34,21 @@
   </script>
 
   <span id ="chatspan" style="font-size:30px;cursor:pointer" onclick="openChat()">&#9776; chat</span>
+  <script src="/js/index.js" onload="setup()"></script>
+  <script src="/js/socketStuff.js" type="module"></script>
   <div id="chatnav" class="chat">
     <a href="javascript:void(0)" class="closebtn2" onclick="closeChat()">&times;</a>
     <div id="chatbox">
       <div id="messages"></div>
       <div id="people"></div>
+      <div id="chatbuttons">
+        <button id="msgsChooser" onclick="choosePerson()">Select User</button>
+        <button id="loadMsgs">Load Msgs</button>
+      </div>
       <div id="userText">
         <input type="text" id="message">
         <button id="sendMsg">Send</button>
       </div>
-      <button id="msgsChooser" onclick="choosePerson()">Select User</button>
-      <button id="loadMsgs">Load Msgs</button>
     </div>
   </div>
   <script>
