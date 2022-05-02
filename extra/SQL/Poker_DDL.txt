@@ -1,0 +1,10 @@
+create database credentials;
+use credentials;
+create table Messages(
+id int not null auto_increment primary key, 
+fromID varchar(255) not null,
+toID varchar(255) not null,
+message varchar(7999) not null);
+create table user(
+username varchar(255) not null primary key,
+password varchar(255) not null);
