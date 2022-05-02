@@ -37,9 +37,9 @@ TO CREATE USER/MESSAGE DATABASE:
   >username varchar(255) not null primary key,
 
   >password varchar(255) not null);
-  
 3. voila! you should now be able to create users within the website
 
+WRITEUP (FOR RICHARDS):
 For this project we chose to teach students how to play poker (Texas Hold'em, specifically). We chose this because, while we love Poker ourselves, it gave us an
 opportunity to think empathetically by putting ourselves in the shoes of people who have never played poker before. This gave us the tricky challenge of designing
 an interesting but simple website that makes it easy for new players to learn. The 'simple' aspect to our website design was the most difficult--it can be challenging
@@ -55,5 +55,4 @@ Above and beyond:
 Hour count:
   15 hours each member (30 hours total)
 Grade anticipated:
-  We both believe that we deserve A's on this project. Not only did we work really hard and spend a lot of time on this, but we also met every expectation, went 
-  above and beyond, and we put love into it.
+  We both believe that we deserve A's on this project, at minimum 93s. Not only did we work really hard and spend a lot of time on this, but we also met every expectation, went above and beyond, and we put love into it.
