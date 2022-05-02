@@ -4,3 +4,9 @@
 #password {
     border: 1px solid black;
 }
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
