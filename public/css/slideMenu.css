@@ -33,3 +33,10 @@
     font-size: 36px;
     margin-left: 50px;
   }
+
+  #menuspan {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
