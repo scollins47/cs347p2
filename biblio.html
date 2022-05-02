@@ -36,10 +36,20 @@
   <span id ="chatspan" style="font-size:30px;cursor:pointer" onclick="openChat()">&#9776; chat</span>
   <div id="chatnav" class="chat">
     <a href="javascript:void(0)" class="closebtn2" onclick="closeChat()">&times;</a>
+    <div id="chatbox">
+      <div id="messages"></div>
+      <div id="people"></div>
+      <div id="userText">
+        <input type="text" id="message">
+        <button id="sendMsg">Send</button>
+      </div>
+      <button id="msgsChooser" onclick="choosePerson()">Select User</button>
+      <button id="loadMsgs">Load Msgs</button>
+    </div>
   </div>
   <script>
     function openChat() {
-      document.getElementById("chatnav").style.width = "250px";
+      document.getElementById("chatnav").style.width = "600px";
     }
     function closeChat() {
       document.getElementById("chatnav").style.width = "0";
